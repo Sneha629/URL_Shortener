@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analytics Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1 class="logo">🔗 ShortURL</h1>
+    <a href="index.html" class="nav-link">← Back to Shortener</a>
+  </nav>
+
+  <div class="container">
+
+    <div class="search-box">
+      <input type="text" id="codeInput" placeholder="Enter short code e.g. abc123" />
+      <button onclick="loadAnalytics()">Search</button>
+    </div>
+
+    <div id="analyticsData" class="hidden">
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Original URL</h3>
+          <p id="originalUrl" class="url-text"></p>
+        </div>
+        <div class="stat-card">
+          <h3>Short Code</h3>
+          <p id="shortCode" class="big-number"></p>
+        </div>
+        <div class="stat-card">
+          <h3>Total Clicks</h3>
+          <p id="totalClicks" class="big-number"></p>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Clicks Over Time</h3>
+          <canvas id="clicksChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Device Breakdown</h3>
+          <canvas id="deviceChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="analyticsError" class="error hidden"></div>
+     </div>
+
+  <script src="analytics.js"></script>
+</body>
+</html>
